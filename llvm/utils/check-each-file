@@ -120,7 +120,7 @@ rm -f $program
 $linker
 if $checker
 then
-	echo "Sorry, I can't help you, $program is OK when compiled with llvm-native-gcc"
+	echo "I cannot help you, $program is OK when compiled with llvm-native-gcc"
 	exit 1
 fi
 for f in $files

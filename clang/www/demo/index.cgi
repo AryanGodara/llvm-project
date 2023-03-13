@@ -270,7 +270,7 @@ sub try_run {
         alarm 0;
     };
     if ( $@ and $@ =~ /timeout/ ) { 
-      barf("Program $program took too long, compile time limited for the web script, sorry!\n"); 
+      barf("Program $program took too long, compile time limited for the web script.\n"); 
     }
     if ( -s $outputFile ) {
         print scalar dumpFile( "Output from $program", $outputFile );
@@ -286,7 +286,7 @@ sub try_run {
     if ( WIFSIGNALED($retcode) != 0 ) {
         my $sig = WTERMSIG($retcode);
         barf(
-            "Ouch, $program caught signal $sig. Sorry, better luck next time!\n"
+            "Ouch, $program caught signal $sig.\n"
         );
     }
 }

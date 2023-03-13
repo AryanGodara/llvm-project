@@ -226,7 +226,7 @@ private:
   addRunOnModule(PassConceptT *Pass) {
     static_assert(is_detected<is_machine_function_pass_t, PassT>::value,
                   "machine module pass needs to define machine function pass "
-                  "api. sorry.");
+                  "api.");
 
     using PassModelT =
         detail::PassModel<MachineFunction, PassT, PreservedAnalyses,

@@ -119,7 +119,7 @@ BugDriver::deleteInstructionFromProgram(const Instruction *I,
   Passes.push_back("verify");
   std::unique_ptr<Module> New = runPassesOn(Clone.get(), Passes);
   if (!New) {
-    errs() << "Instruction removal failed.  Sorry. :(  Please report a bug!\n";
+    errs() << "Instruction removal failed. Please report a bug!\n";
     exit(1);
   }
   return New;
@@ -141,7 +141,7 @@ BugDriver::performFinalCleanups(std::unique_ptr<Module> M,
 
   std::unique_ptr<Module> New = runPassesOn(M.get(), CleanupPasses);
   if (!New) {
-    errs() << "Final cleanups failed.  Sorry. :(  Please report a bug!\n";
+    errs() << "Final cleanups failed. Please report a bug!\n";
     return nullptr;
   }
   return New;
@@ -155,7 +155,7 @@ std::unique_ptr<Module> BugDriver::extractLoop(Module *M) {
   if (!NewM) {
     outs() << "*** Loop extraction failed: ";
     EmitProgressBitcode(*M, "loopextraction", true);
-    outs() << "*** Sorry. :(  Please report a bug!\n";
+    outs() << "*** Please report a bug!\n";
     return nullptr;
   }
 

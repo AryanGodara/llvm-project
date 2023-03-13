@@ -11423,12 +11423,12 @@ TEST_F(FormatTest, UnderstandsSquareAttributes) {
   verifyFormat("SomeType s [[gnu::unused]] (InitValue);");
   verifyFormat("SomeType s [[using gnu: unused]] (InitValue);");
   verifyFormat("[[gsl::suppress(\"clang-tidy-check-name\")]] void f() {}");
-  verifyFormat("void f() [[deprecated(\"so sorry\")]];");
+  verifyFormat("void f() [[deprecated]];");
   verifyFormat("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n"
                "    [[unused]] aaaaaaaaaaaaaaaaaaaaaaa(int i);");
   verifyFormat("[[nodiscard]] bool f() { return false; }");
   verifyFormat("class [[nodiscard]] f {\npublic:\n  f() {}\n}");
-  verifyFormat("class [[deprecated(\"so sorry\")]] f {\npublic:\n  f() {}\n}");
+  verifyFormat("class [[deprecated]] f {\npublic:\n  f() {}\n}");
   verifyFormat("class [[gnu::unused]] f {\npublic:\n  f() {}\n}");
   verifyFormat("[[nodiscard]] ::qualified_type f();");
 
@@ -22880,10 +22880,10 @@ TEST_F(FormatTest, GuessLanguageWithCpp11AttributeSpecifiers) {
   EXPECT_EQ(FormatStyle::LK_ObjC,
             guessLanguage("foo.h", "array[[calculator getIndex]];"));
   EXPECT_EQ(FormatStyle::LK_Cpp,
-            guessLanguage("foo.h", "[[noreturn, deprecated(\"so sorry\")]];"));
+            guessLanguage("foo.h", "[[noreturn, deprecated]];"));
   EXPECT_EQ(
       FormatStyle::LK_Cpp,
-      guessLanguage("foo.h", "[[noreturn, deprecated(\"gone, sorry\")]];"));
+      guessLanguage("foo.h", "[[noreturn, deprecated]];"));
   EXPECT_EQ(FormatStyle::LK_ObjC,
             guessLanguage("foo.h", "[[noreturn foo] bar];"));
   EXPECT_EQ(FormatStyle::LK_Cpp,

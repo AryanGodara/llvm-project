@@ -609,7 +609,7 @@ class stdmap_SynthProvider:
                         if self.get_child_at_index(0):
                             return self.get_child_at_index(index)
                         else:
-                            logger >> "item == 0 could not be found. sorry, nothing can be done here."
+                            logger >> "item == 0 could not be found. Nothing can be done here."
                             return None
                     return current.CreateChildAtOffset(
                         '[' + str(index) + ']', self.skip_size, self.data_type)

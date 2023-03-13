@@ -9,8 +9,8 @@
 set -o pipefail
 
 if [ ! -f ../imtest ] ; then
-  echo "I can't find the imath test driver 'imtest', did you build it?"
-  echo "I can't proceed with the unit tests until you do so, sorry."
+  echo "The imath test driver 'imtest' was not found."
+  echo "It needs to be build before proceeding with the unit tests."
   exit 2
 fi
 
@@ -25,8 +25,8 @@ fi
 echo ""
 echo "-- Running test to compute 1024 decimal digits of pi"
 if [ ! -f ../pi ] ; then
-  echo "I can't find the pi computing program, did you build it?"
-  echo "I can't proceed with the pi test until you do so, sorry."
+  echo "The pi computing program was not found."
+  echo "It needs to be built before proceeding with the pi test."
   exit 1
 fi
 

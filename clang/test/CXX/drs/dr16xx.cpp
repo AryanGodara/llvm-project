@@ -392,7 +392,7 @@ namespace dr1696 { // dr1696: 7
 #if __cplusplus < 201402L
     // expected-note@-2 {{first required here}}
 #else
-    // expected-warning-re@-4 {{sorry, lifetime extension {{.*}} not supported}}
+    // expected-warning-re@-4 {{lifetime extension {{.*}} not supported}}
 #endif
 
   struct D2 {

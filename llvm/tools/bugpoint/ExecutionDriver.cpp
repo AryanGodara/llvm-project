@@ -171,7 +171,7 @@ Error BugDriver::initializeExecutionEnvironment() {
     }
     if (!Interpreter) {
       InterpreterSel = AutoPick;
-      Message = "Sorry, I can't automatically select an interpreter!\n";
+      Message = "I cannot automatically select an interpreter!\n";
     }
     break;
   case RunLLI:
@@ -216,7 +216,7 @@ Error BugDriver::initializeExecutionEnvironment() {
           Path.c_str(), Message, CCBinary, &SafeToolArgs, &CCToolArgv);
     } else if (InterpreterSel != CompileCustom) {
       SafeInterpreterSel = AutoPick;
-      Message = "Sorry, I can't automatically select a safe interpreter!\n";
+      Message = "I cannot automatically select a safe interpreter!\n";
     }
     break;
   case RunLLC:
@@ -231,7 +231,7 @@ Error BugDriver::initializeExecutionEnvironment() {
         getToolName(), Message, CustomExecCommand);
     break;
   default:
-    Message = "Sorry, this back-end is not supported by bugpoint as the "
+    Message = "This back-end is not supported by bugpoint as the "
               "\"safe\" backend right now!\n";
     break;
   }

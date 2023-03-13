@@ -9558,7 +9558,7 @@ void Sema::DeclApplyPragmaWeak(Scope *S, NamedDecl *ND, const WeakInfo &W) {
                                            AttributeCommonInfo::AS_Pragma));
     WeakTopLevelDecl.push_back(NewD);
     // FIXME: "hideous" code from Sema::LazilyCreateBuiltin
-    // to insert Decl at TU scope, sorry.
+    // to insert Decl at TU scope.
     DeclContext *SavedContext = CurContext;
     CurContext = Context.getTranslationUnitDecl();
     NewD->setDeclContext(CurContext);

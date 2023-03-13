@@ -1212,7 +1212,6 @@ void StdLibraryFunctionsChecker::checkPostCall(const CallEvent &Call,
       } else {
         StringRef Note = Case.getNote();
         const NoteTag *Tag = C.getNoteTag(
-            // Sorry couldn't help myself.
             [Node, Note]() -> std::string {
               // Don't emit "Assuming..." note when we ended up
               // knowing in advance which branch is taken.
